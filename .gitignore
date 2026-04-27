@@ -1,0 +1,31 @@
+# Obsidian UI 状态（每次开关都会变，不进版本库）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/.DS_Store
+
+# Obsidian 插件本体与个人数据（换机重装即可；data.json 常含 API token / 个人路径）
+.obsidian/plugins/*/data.json
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+.obsidian/plugins/*/manifest.json
+
+# macOS 垃圾
+.DS_Store
+**/.DS_Store
+
+# 临时收集箱（不污染历史；整理完会迁走）
+_临时/*
+!_临时/.gitkeep
+
+# 附件不进 git（体积大 · 如需多端同步图片，改用 Obsidian Git 插件单独策略）
+# _附件/*
+# !_附件/.gitkeep
+
+# 编辑器
+.vscode/
+.idea/
+
+# Python / Node（如果以后有脚本放这）
+__pycache__/
+node_modules/
