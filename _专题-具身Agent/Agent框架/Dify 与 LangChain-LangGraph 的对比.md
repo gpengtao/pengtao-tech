@@ -85,7 +85,7 @@ TODO ── 学完后写：
 
 ---
 
-## 面试常问追问（先列预设题，学完逐个填）
+## 延伸追问（先列预设题，学完逐个填）
 
 - **Q：Dify 已经能做 Agent 了，为什么还需要 LangGraph？两者是替代关系吗？**  
   TODO（参考思路：互补关系——平台 vs 库；多 Agent 与状态机 LangGraph 强；运营与多租户 Dify 强；具身 Agent 倾向 LangGraph）

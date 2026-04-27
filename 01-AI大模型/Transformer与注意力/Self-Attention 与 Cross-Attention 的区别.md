@@ -38,9 +38,9 @@ tags: [P0, 真盲区, AI方向, 生疏]
 - 仅含 **带因果 mask 的 Self-Attention** + FFN 堆叠。  
 - 「看条件/知识」时，**条件也在同一自回归序列**里以 prompt 形式给出，**靠 Self-Attention 在段内**完成，不单独拆出 Cross-Attention 子层。
 
-**面试区分**：*「有 Encoder-Decoder 的翻译用 Cross；纯 GPT 只有 Causal Self-Attn。»*
+**一句话区分**：*「有 Encoder-Decoder 的翻译用 Cross；纯 GPT 只有 Causal Self-Attn。»*
 
-## 面试常问追问
+## 延伸追问
 
 - **Q：Cross-Attention 里 K 和 V 一定相同来源吗？**  
   答：通常 **K、V 同源**（同一组 Encoder 表示的两套投影），与 **Q 异源**；变体（perceiver 等）另说，常规考点到此为止。
@@ -58,7 +58,7 @@ TODO
 - [ ] 已背速记
 - [ ] 能讲通俗版
 - [ ] 能答追问
-- [ ] 面试真碰到过且答得好
+- [ ] 在实际场景中用上过
 
 ## 参考资料
 - Vaswani et al., 2017 §3.1 / Encoder-Decoder stacks
