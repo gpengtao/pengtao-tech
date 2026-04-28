@@ -15,39 +15,35 @@ priority: P1
 ### JVM 与 GC
 _Java 高频考点 · 配 1～2 个「大对象 / 长计算 / 压测」相关的案例更扎实_
 
-_待补清单_
-- G1 和 ZGC 怎么选 / 各自适合什么场景
-- ZGC 的染色指针解决了什么
-- Full GC 的触发条件
-- 逃逸分析和栈上分配
-- CPU 100% 完整排查命令序列（top -Hp / jstack / arthas）
-- JIT 编译线程烧 CPU 怎么处理
-- OOM 排查路径（堆内 / 堆外 / Metaspace / DirectBuffer）
+- 🆕 [[02-Java后端核心/JVM与GC/G1 和 ZGC 怎么选]] #P0 #生疏
+- 🆕 [[02-Java后端核心/JVM与GC/ZGC 的染色指针解决了什么]] #P1 #生疏
+- 🆕 [[02-Java后端核心/JVM与GC/Full GC 的触发条件]] #P0 #生疏
+- 🆕 [[02-Java后端核心/JVM与GC/逃逸分析和栈上分配]] #P1 #生疏
+- 🆕 [[02-Java后端核心/JVM与GC/CPU 100% 完整排查命令序列]] #P0 #生疏
+- 🆕 [[02-Java后端核心/JVM与GC/JIT 编译线程烧 CPU 怎么处理]] #P1 #生疏
+- 🆕 [[02-Java后端核心/JVM与GC/OOM 排查路径]] #P0 #生疏
 
 ### 并发编程
 _"场景 → 方案 → 坑点"三段要练熟_
 
-_待补清单_
-- synchronized 锁升级全过程
-- AQS 的核心思想 / ReentrantLock vs synchronized
-- ConcurrentHashMap 1.7 vs 1.8
-- ThreadLocal 内存泄漏与 InheritableThreadLocal / TransmittableThreadLocal
-- CompletableFuture 默认线程池的坑
-- 线程池隔离策略 / 拒绝策略怎么选
-- 分布式锁：Redis vs ZK vs 数据库
-- Redlock 算法的争议
+- 🆕 [[02-Java后端核心/并发编程/synchronized 锁升级全过程]] #P0 #生疏
+- 🆕 [[02-Java后端核心/并发编程/AQS 的核心思想与 ReentrantLock]] #P0 #生疏
+- 🆕 [[02-Java后端核心/并发编程/ConcurrentHashMap 1.7 vs 1.8]] #P0 #生疏
+- 🆕 [[02-Java后端核心/并发编程/ThreadLocal 内存泄漏与 TTL]] #P0 #生疏
+- 🆕 [[02-Java后端核心/并发编程/CompletableFuture 默认线程池的坑]] #P1 #生疏
+- 🆕 [[02-Java后端核心/并发编程/线程池隔离策略与拒绝策略]] #P0 #生疏
+- 🆕 [[02-Java后端核心/并发编程/分布式锁 Redis vs ZK vs 数据库]] #P0 #生疏
+- 🆕 [[02-Java后端核心/并发编程/Redlock 算法的争议]] #P1 #生疏
 
 ### Spring 与 Dubbo
 _框架扩展点深度 · 你在大模型应用平台里用过 SPI_
 
-_待补清单_
-- Spring 三级缓存解决循环依赖
-- 构造器注入 / @Async 代理对象的循环依赖难题
-- Spring 事务失效的典型场景
-- Dubbo 完整调用链（代理 → 集群容错 → 负载均衡 → 路由 → 序列化 → 线程分发）
-- Dubbo Provider 线程池打满的现象
-- Dubbo 超时是从哪一刻开始算的
-- SPI 在你项目里的实际用法
+- 🆕 [[02-Java后端核心/Spring与Dubbo/Spring 三级缓存解决循环依赖]] #P0 #生疏
+- 🆕 [[02-Java后端核心/Spring与Dubbo/构造器注入和 @Async 代理的循环依赖难题]] #P1 #生疏
+- 🆕 [[02-Java后端核心/Spring与Dubbo/Spring 事务失效的典型场景]] #P0 #生疏
+- 🆕 [[02-Java后端核心/Spring与Dubbo/Dubbo 完整调用链]] #P0 #生疏
+- 🆕 [[02-Java后端核心/Spring与Dubbo/Dubbo Provider 线程池打满与超时]] #P0 #生疏
+- 🆕 [[02-Java后端核心/Spring与Dubbo/SPI 在项目里的实际用法]] #P1 #生疏
 
 ---
 
