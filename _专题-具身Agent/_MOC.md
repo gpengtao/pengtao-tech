@@ -63,9 +63,9 @@ priority: P0
 - 测试：`pytest` / `pytest-asyncio` / `respx`
 
 **对应题目**：
-- 🆕 [[_专题-具身Agent/Python工程化/Python async 与 FastAPI 入门]] #未动 #P0
-- 🆕 [[_专题-具身Agent/Python工程化/Pydantic 与类型提示在 LLM 应用里的用法]] #未动 #P0
-- 🆕 [[_专题-具身Agent/Python工程化/Python 项目结构与 uv-poetry-pip 选型]] #未动 #P1
+- 🆕 [[_专题-具身Agent/Python工程化/Python async 与 FastAPI 入门]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/Python工程化/Pydantic 与类型提示在 LLM 应用里的用法]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/Python工程化/Python 项目结构与 uv-poetry-pip 选型]] #生疏 #P1
 
 ---
 
@@ -88,10 +88,10 @@ priority: P0
 - 🔁 [[01-AI大模型/Agent系统/Agent 的基本抽象是什么]]
 - 🔁 [[01-AI大模型/Agent系统/ReAct 的核心思想是什么]]
 - 🔁 [[01-AI大模型/Agent系统/Planning 类 Agent 有哪些模式]]
-- 🆕 [[_专题-具身Agent/Agent框架/LangGraph 是什么 与 LangChain 的关系]] #未动 #P0
-- 🆕 [[_专题-具身Agent/Agent框架/Reflection 与 Self-Critique 模式]] #未动 #P0
-- 🆕 [[_专题-具身Agent/Agent框架/Agent 的错误恢复与 checkpoint 怎么做]] #未动 #P0
-- 🆕 [[_专题-具身Agent/Agent框架/Dify 与 LangChain-LangGraph 的对比]] #未动 #P0 ← **平台 vs 库的横向对比，深研优先**
+- 🆕 [[_专题-具身Agent/Agent框架/LangGraph 是什么 与 LangChain 的关系]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/Agent框架/Reflection 与 Self-Critique 模式]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/Agent框架/Agent 的错误恢复与 checkpoint 怎么做]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/Agent框架/Dify 与 LangChain-LangGraph 的对比]] #生疏 #P0 ← **平台 vs 库的横向对比，深研优先**
 
 ---
 
@@ -111,10 +111,10 @@ priority: P0
 - 工具调用日志、可观测、审计
 
 **对应题目**：
-- 🆕 [[_专题-具身Agent/工具调用/OpenAI Function Calling 怎么工作]] #未动 #P0
-- 🆕 [[_专题-具身Agent/工具调用/MCP 协议是什么 与 dify_plugin 的关系]] #未动 #P0
-- 🆕 [[_专题-具身Agent/工具调用/Tool Calling 的失败处理与重试设计]] #未动 #P0
-- 🆕 [[_专题-具身Agent/工具调用/Parallel Tools 与并发工具调用]] #未动 #P1
+- 🆕 [[_专题-具身Agent/工具调用/OpenAI Function Calling 怎么工作]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/工具调用/MCP 协议是什么 与 dify_plugin 的关系]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/工具调用/Tool Calling 的失败处理与重试设计]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/工具调用/Parallel Tools 与并发工具调用]] #生疏 #P1
 
 ---
 
@@ -134,8 +134,8 @@ priority: P0
 
 **对应题目**：
 - 🔁 [[01-AI大模型/Agent系统/Multi-Agent 有哪些协作范式]]
-- 🆕 [[_专题-具身Agent/Agent框架/AutoGen 与 CrewAI 的差异]] #未动 #P0
-- 🆕 [[_专题-具身Agent/Agent框架/LangGraph 多 Agent 的状态管理]] #未动 #P0
+- 🆕 [[_专题-具身Agent/Agent框架/AutoGen 与 CrewAI 的差异]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/Agent框架/LangGraph 多 Agent 的状态管理]] #生疏 #P0
 
 ---
 
@@ -159,8 +159,8 @@ priority: P0
 - 🔁 [[01-AI大模型/RAG与向量检索/Chunking 有哪些常用策略]]
 - 🔁 [[01-AI大模型/RAG与向量检索/为什么 RAG 还需要 Rerank]]
 - 🔁 [[01-AI大模型/Agent系统/Agent 的记忆如何分层]]
-- 🆕 [[_专题-具身Agent/RAG与记忆/Mem0 与 MemGPT 长期记忆思路]] #未动 #P0
-- 🆕 [[_专题-具身Agent/RAG与记忆/长上下文 vs RAG 怎么选]] #未动 #P0
+- 🆕 [[_专题-具身Agent/RAG与记忆/Mem0 与 MemGPT 长期记忆思路]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/RAG与记忆/长上下文 vs RAG 怎么选]] #生疏 #P0
 
 ---
 
@@ -181,10 +181,10 @@ priority: P0
 - 推理监控：GPU 利用率、KV cache 占用率、QPS、p99
 
 **对应题目**：
-- 🆕 [[_专题-具身Agent/推理服务化/vLLM 是什么 PagedAttention 解决了什么]] #未动 #P0
-- 🆕 [[_专题-具身Agent/推理服务化/Continuous Batching 的意义]] #未动 #P0
-- 🆕 [[_专题-具身Agent/推理服务化/KV Cache 为什么重要]] #未动 #P0
-- 🆕 [[_专题-具身Agent/推理服务化/SGLang 与 vLLM 的差异]] #未动 #P1
+- 🆕 [[_专题-具身Agent/推理服务化/vLLM 是什么 PagedAttention 解决了什么]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/推理服务化/Continuous Batching 的意义]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/推理服务化/KV Cache 为什么重要]] #生疏 #P0
+- 🆕 [[_专题-具身Agent/推理服务化/SGLang 与 vLLM 的差异]] #生疏 #P1
 
 ---
 
@@ -204,9 +204,9 @@ priority: P0
 - **决策树**：何时 prompt、何时 RAG、何时微调（**重点**）
 
 **对应题目**：
-- 🆕 [[_专题-具身Agent/微调/LoRA 和 QLoRA 的区别]] #未动 #P1
-- 🆕 [[_专题-具身Agent/微调/SFT-RLHF-DPO 的关系]] #未动 #P1
-- 🆕 [[_专题-具身Agent/微调/什么时候微调 什么时候 RAG 什么时候 prompt]] #未动 #P1
+- 🆕 [[_专题-具身Agent/微调/LoRA 和 QLoRA 的区别]] #生疏 #P1
+- 🆕 [[_专题-具身Agent/微调/SFT-RLHF-DPO 的关系]] #生疏 #P1
+- 🆕 [[_专题-具身Agent/微调/什么时候微调 什么时候 RAG 什么时候 prompt]] #生疏 #P1
 
 ---
 
@@ -225,8 +225,8 @@ priority: P0
 - 数据闭环：数据爬取 → 数据集 → 回放 → 评估 → 灰度的标准链路
 
 **对应题目**：
-- 🆕 [[_专题-具身Agent/Agent评测/Agent 评测怎么做 LangSmith 与 RAGAS]] #未动 #P1
-- 🆕 [[_专题-具身Agent/Agent评测/AgentBench-GAIA-WebArena 是什么]] #未动 #P1
+- 🆕 [[_专题-具身Agent/Agent评测/Agent 评测怎么做 LangSmith 与 RAGAS]] #生疏 #P1
+- 🆕 [[_专题-具身Agent/Agent评测/AgentBench-GAIA-WebArena 是什么]] #生疏 #P1
 
 ---
 
@@ -247,9 +247,9 @@ priority: P0
 - VLA 在产品里的落点：通常是「**大脑层**」之下的一层，和 LLM 规划解耦
 
 **对应题目**：
-- 🆕 [[_专题-具身Agent/多模态/VLM 与 VLA 的区别]] #未动 #P1
-- 🆕 [[_专题-具身Agent/多模态/Qwen-VL 与 LLaVA 的能力差异]] #未动 #P1
-- 🆕 [[_专题-具身Agent/多模态/OpenVLA 与 π0 与 RDT-1B 是什么]] #未动 #P1
+- 🆕 [[_专题-具身Agent/多模态/VLM 与 VLA 的区别]] #生疏 #P1
+- 🆕 [[_专题-具身Agent/多模态/Qwen-VL 与 LLaVA 的能力差异]] #生疏 #P1
+- 🆕 [[_专题-具身Agent/多模态/OpenVLA 与 π0 与 RDT-1B 是什么]] #生疏 #P1
 
 ---
 
@@ -270,11 +270,11 @@ priority: P0
 - 「**后端 / 平台 / 数据闭环**」在具身公司架构里的具体位置：工程师常见落点
 
 **对应题目**：
-- 🆕 [[_专题-具身Agent/具身/具身智能与人形机器人的区别]] #未动 #P2
-- 🆕 [[_专题-具身Agent/具身/大脑-小脑分层架构是什么]] #未动 #P2
-- 🆕 [[_专题-具身Agent/具身/感知-决策-执行闭环里的工程难点]] #未动 #P2
-- 🆕 [[_专题-具身Agent/具身/Sim2Real 是什么 仿真到真机有哪些 gap]] #未动 #P2
-- 🆕 [[_专题-具身Agent/具身/具身公司里后端-平台-数据闭环的位置]] #未动 #P2
+- 🆕 [[_专题-具身Agent/具身/具身智能与人形机器人的区别]] #生疏 #P2
+- 🆕 [[_专题-具身Agent/具身/大脑-小脑分层架构是什么]] #生疏 #P2
+- 🆕 [[_专题-具身Agent/具身/感知-决策-执行闭环里的工程难点]] #生疏 #P2
+- 🆕 [[_专题-具身Agent/具身/Sim2Real 是什么 仿真到真机有哪些 gap]] #生疏 #P2
+- 🆕 [[_专题-具身Agent/具身/具身公司里后端-平台-数据闭环的位置]] #生疏 #P2
 
 ### P3 ── 不投入（投入产出比差）
 
