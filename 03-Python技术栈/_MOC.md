@@ -17,6 +17,9 @@ priority: P1
 - [[语言核心/装饰器的执行时机]] #P1 #生疏 — import 时执行、带参装饰器、@wraps
 - [[语言核心/生成器与迭代器的区别]] #P1 #生疏 — yield / 惰性求值 / LLM 流式输出
 - [[语言核心/__slots__ 元类 描述符用过吗]] #P2 #生疏 — 内存优化 / ORM/Pydantic 元类 / @property 原理
+- [[03-Python技术栈/语言核心/类型注解与Annotated|类型注解与 Annotated]] — Type Hints / Annotated 元数据 / 运行时校验
+- [[03-Python技术栈/语言核心/Generic|Generic 泛型]] — typing.Generic / TypeVar / 泛型类定义
+- [[03-Python技术栈/语言核心/强制关键字参数（keyword-only）|强制关键字参数（keyword-only）]] — `*` 分隔符 / 接口设计防误用
 
 ### 异步与并发
 - [[异步与并发/asyncio 事件循环机制]] #P0 #生疏 — 就绪队列 + selector 轮询 / Task vs Future
@@ -45,3 +48,5 @@ FROM "03-Python技术栈"
 WHERE contains(tags, "生疏") OR contains(tags, "未动")
 SORT file.mtime ASC
 ```
+
+---
