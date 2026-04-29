@@ -6,6 +6,16 @@ tags: [P0, 真盲区, AI方向, 生疏]
 
 # 向量库与 pgvector 类方案怎么选
 
+## 出处与发音
+
+| 名字 | 音标 | 念法 | 出处 |
+|------|------|------|------|
+| **FAISS** | /feɪs/ | "fays"（同 face 去掉 e） | Meta（Facebook）AI Research，2019 年开源，全称 Facebook AI Similarity Search |
+| **Chroma** | /ˈkroʊmə/ | "KRO-muh"（克罗-嬷） | Chroma 公司（前 Trychroma），2022 年开源，专为 LLM 应用设计的嵌入式向量库 |
+| **Milvus** | /ˈmɪlvəs/ | "MIL-vus"（米尔-乌斯） | Zilliz 公司主导，2019 年开源，名字来自拉丁语"鸢"（一种猛禽），LF AI & Data 基金会项目 |
+| **Qdrant** | /ˈkwɒdrənt/ | "KWOD-rənt"（象限） | 德国团队 Qdrant Solutions，2021 年开源，名字取自 quadrant（象限），暗指向量空间 |
+| **pgvector** | /piː dʒiː ˈvektər/ | "pee-jee-VEK-ter" | Postgres 社区扩展，Jonathan Katz 等人维护，2021 年发布，直接在 PostgreSQL 里加向量索引 |
+
 ## 一句话速记
 - **FAISS**：本地/原型，纯索引库，无持久化无服务，适合快速验证
 - **Chroma**：开发阶段首选，内置持久化+元数据过滤，小规模 RAG 快速落地
