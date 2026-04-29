@@ -2,6 +2,12 @@
 
 个人技术知识库，使用 [Obsidian](https://obsidian.md) 管理。**问题驱动，一题一文件**——每个 `.md` 文件回答一个具体技术问题。
 
+> **What got you here won't get you there.**
+> **But what got you here is more than enough to start getting you there.**
+>
+> 让你走到这里的，到不了那里；
+> 但让你走到这里的，已足以让你启程。
+
 ## 这个库是什么
 
 - 知识学习库（问题驱动，一题一文件）
