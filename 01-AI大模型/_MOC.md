@@ -22,50 +22,116 @@ _原理层 · 高频考点 · **建议按下列顺序逐个补全（学完一题
 5. [[01-AI大模型/Transformer与注意力/Decoder 的 Mask 为什么要下三角|Decoder 的 Mask 为什么要下三角]] #生疏
 6. [[01-AI大模型/Transformer与注意力/Self-Attention 与 Cross-Attention 的区别|Self-Attention 与 Cross-Attention 的区别]] #生疏
 
-_待补清单（按推荐顺序）_
+_待补_
 7. Position Encoding 的几种实现（Sinusoidal / RoPE / ALiBi）
 8. LayerNorm 在 Pre-LN 和 Post-LN 里的区别
+
+---
 
 ### 训练与微调
 _高频考点 · 纯应用侧最容易被戳穿_
 
-_待补清单_
+1. [[01-AI大模型/训练与微调/LoRA 和 QLoRA 的区别|LoRA 和 QLoRA 的区别]]
+2. [[01-AI大模型/训练与微调/SFT-RLHF-DPO 的关系|SFT / RLHF / DPO 的关系]]
+3. [[01-AI大模型/训练与微调/什么时候微调 什么时候 RAG 什么时候 prompt|什么时候微调 / RAG / prompt]]
+
+_待补_
 - 学习率怎么选 / warmup 的意义
 - loss 怎么看 / 什么是 loss 异常
-- LoRA 和 QLoRA 的区别
-- SFT / RLHF / DPO 的关系
 - 数据集构建的关键步骤
 - Instruction Tuning 和 In-Context Learning 的区别
+
+---
 
 ### Agent 系统
 _规划 · 工具 · 记忆 · 多智能体 · 与固定编排的边界 —— **子地图**：[[01-AI大模型/Agent系统/_MOC|Agent系统/_MOC]]_
 
+**核心原理**
 1. [[01-AI大模型/Agent系统/Agent 的基本抽象是什么|Agent 的基本抽象是什么]]
 2. [[01-AI大模型/Agent系统/ReAct 的核心思想是什么|ReAct 的核心思想是什么]]
 3. [[01-AI大模型/Agent系统/Planning 类 Agent 有哪些模式|Planning 类 Agent 有哪些模式]]
-4. [[01-AI大模型/Agent系统/Agent 的记忆如何分层|Agent 的记忆如何分层]]
-5. [[01-AI大模型/Agent系统/Multi-Agent 有哪些协作范式|Multi-Agent 有哪些协作范式]]
-6. [[01-AI大模型/Agent系统/固定编排与 LLM Agent 的边界是什么|固定编排与 LLM Agent 的边界是什么]]
+4. [[01-AI大模型/Agent系统/Reflection 与 Self-Critique 模式|Reflection 与 Self-Critique 模式]]
+5. [[01-AI大模型/Agent系统/Agent 的记忆如何分层|Agent 的记忆如何分层]]
+6. [[01-AI大模型/Agent系统/Multi-Agent 有哪些协作范式|Multi-Agent 有哪些协作范式]]
+7. [[01-AI大模型/Agent系统/固定编排与 LLM Agent 的边界是什么|固定编排与 LLM Agent 的边界是什么]]
+
+**LangGraph 工程实现**
+8. [[01-AI大模型/Agent系统/LangGraph 是什么 与 LangChain 的关系|LangGraph 是什么 / 与 LangChain 的关系]]
+9. [[01-AI大模型/Agent系统/Dify 与 LangChain-LangGraph 的对比|Dify vs LangChain vs LangGraph 对比]]
+10. [[01-AI大模型/Agent系统/LangGraph 多 Agent 的状态管理|LangGraph 多 Agent 的状态管理]]
+11. [[01-AI大模型/Agent系统/LangGraph Multi-Agent Supervisor vs Swarm|LangGraph Multi-Agent：Supervisor vs Swarm]]
+12. [[01-AI大模型/Agent系统/LangGraph 里如何接入长期记忆|LangGraph 里如何接入长期记忆]]
+13. [[01-AI大模型/Agent系统/Agent 的错误恢复与 checkpoint 怎么做|Agent 的错误恢复与 checkpoint 怎么做]]
+
+**Agent 框架对比**
+14. [[01-AI大模型/Agent系统/AutoGen 与 CrewAI 的差异|AutoGen 与 CrewAI 的差异]]
+
+**Agent 评测**
+15. [[01-AI大模型/Agent系统/Agent 评测怎么做 LangSmith 与 RAGAS|Agent 评测怎么做：LangSmith 与 RAGAS]]
+16. [[01-AI大模型/Agent系统/AgentBench-GAIA-WebArena 是什么|AgentBench / GAIA / WebArena 是什么]]
+
+---
+
+### 工具调用
+_Function Calling · MCP · 并发 · 失败处理_
+
+1. [[01-AI大模型/工具调用/OpenAI Function Calling 怎么工作|OpenAI Function Calling 怎么工作]]
+2. [[01-AI大模型/工具调用/Parallel Tools 与并发工具调用|Parallel Tools 与并发工具调用]]
+3. [[01-AI大模型/工具调用/Tool Calling 的失败处理与重试设计|Tool Calling 的失败处理与重试设计]]
+4. [[01-AI大模型/工具调用/MCP 协议是什么 与 dify_plugin 的关系|MCP 协议是什么 / 与 dify_plugin 的关系]]
+
+---
 
 ### RAG 与向量检索
-_稠密/稀疏/混合 · 切块 · 向量库 · Rerank · 指标 —— **子地图**：[[01-AI大模型/RAG与向量检索/_MOC|RAG与向量检索/_MOC]]_
+_稠密/稀疏/混合 · 切块 · 向量库 · Rerank · 记忆 —— **子地图**：[[01-AI大模型/RAG与向量检索/_MOC|RAG与向量检索/_MOC]]_
 
+**RAG 基础**
 1. [[01-AI大模型/RAG与向量检索/RAG 的基本流程与局限|RAG 的基本流程与局限]]
 2. [[01-AI大模型/RAG与向量检索/Chunking 有哪些常用策略|Chunking 有哪些常用策略]]
 3. [[01-AI大模型/RAG与向量检索/Embedding 模型怎么选|Embedding 怎么选]]
-4. [[01-AI大模型/RAG与向量检索/向量库与 pgvector 类方案怎么选|向量库与 pgvector 类方案怎么选]]
-5. [[01-AI大模型/RAG与向量检索/为什么 RAG 还需要 Rerank|为什么 RAG 还需要 Rerank]]
-6. [[01-AI大模型/RAG与向量检索/检索与排序效果怎么评（Recall、MRR、nDCG）|检索与排序效果怎么评（Recall、MRR、nDCG）]]
+4. [[01-AI大模型/RAG与向量检索/为什么 RAG 还需要 Rerank|为什么 RAG 还需要 Rerank]]
+5. [[01-AI大模型/RAG与向量检索/检索与排序效果怎么评（Recall、MRR、nDCG）|检索与排序效果怎么评]]
+6. [[01-AI大模型/RAG与向量检索/长上下文 vs RAG 怎么选|长上下文 vs RAG 怎么选]]
+
+**向量库选型**
+7. [[01-AI大模型/RAG与向量检索/向量库与 pgvector 类方案怎么选|向量库选型：FAISS / Chroma / Milvus / pgvector]]
+
+**记忆系统**
+8. [[01-AI大模型/RAG与向量检索/Mem0 与 MemGPT 长期记忆思路|Mem0 与 MemGPT 长期记忆思路]]
+
+---
 
 ### 推理与部署
 _算力与线上形态；被问概率随岗位升高_
 
-_待补清单_
-- vLLM 的 PagedAttention 解决了什么
-- Continuous Batching 的意义
+1. [[01-AI大模型/推理与部署/vLLM 是什么 PagedAttention 解决了什么|vLLM 是什么 / PagedAttention 解决了什么]]
+2. [[01-AI大模型/推理与部署/KV Cache 为什么重要|KV Cache 为什么重要]]
+3. [[01-AI大模型/推理与部署/Continuous Batching 的意义|Continuous Batching 的意义]]
+4. [[01-AI大模型/推理与部署/SGLang 与 vLLM 的差异|SGLang 与 vLLM 的差异]]
+
+_待补_
 - 量化（INT8 / INT4 / AWQ / GPTQ）对比
-- KV Cache 为什么重要
 - TGI / Triton / ONNX Runtime 的定位差异
+
+---
+
+### 多模态
+_VLM · VLA · 主流模型对比_
+
+1. [[01-AI大模型/多模态/VLM 与 VLA 的区别|VLM 与 VLA 的区别]]
+2. [[01-AI大模型/多模态/Qwen-VL 与 LLaVA 的能力差异|Qwen-VL 与 LLaVA 的能力差异]]
+3. [[01-AI大模型/多模态/OpenVLA 与 π0 与 RDT-1B 是什么|OpenVLA / π0 / RDT-1B 是什么]]
+
+---
+
+### 具身智能
+_感知-决策-执行 · 大脑小脑 · Sim2Real · 工程定位_
+
+1. [[01-AI大模型/具身/具身智能与人形机器人的区别|具身智能与人形机器人的区别]]
+2. [[01-AI大模型/具身/大脑-小脑分层架构是什么|大脑-小脑分层架构是什么]]
+3. [[01-AI大模型/具身/感知-决策-执行闭环里的工程难点|感知-决策-执行闭环里的工程难点]]
+4. [[01-AI大模型/具身/Sim2Real 是什么 仿真到真机有哪些 gap|Sim2Real 是什么 / 仿真到真机有哪些 gap]]
+5. [[01-AI大模型/具身/具身公司里后端-平台-数据闭环的位置|具身公司里后端/平台/数据闭环的位置]]
 
 ---
 

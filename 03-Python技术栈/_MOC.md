@@ -30,6 +30,11 @@ priority: P1
 - [[工程与生态/Poetry uv pip 的选型]] #P1 #生疏 — uv 极速 / Poetry 成熟 / lock 文件意义
 - [[工程与生态/Python vs Java 差异感]] #P1 #生疏 — ORM / 泛型 / 异常 / 鸭子类型思维转变
 
+### Python 工程化（LLM 应用向）
+- [[03-Python技术栈/Python工程化/Python async 与 FastAPI 入门|Python async 与 FastAPI 入门]]
+- [[03-Python技术栈/Python工程化/Pydantic 与类型提示在 LLM 应用里的用法|Pydantic 与类型提示在 LLM 应用里的用法]]
+- [[03-Python技术栈/Python工程化/Python 项目结构与 uv-poetry-pip 选型|Python 项目结构与 uv / poetry / pip 选型]]
+
 ---
 
 ## 本模块动态视图
