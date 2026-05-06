@@ -2,13 +2,10 @@
 
 个人技术知识库，使用 [Obsidian](https://obsidian.md) 管理。**问题驱动，一题一文件**——每个 `.md` 文件回答一个具体技术问题。
 
-> **What got you here won't get you there.**
-> **But what got you here is more than enough to start getting you there.**
+> **What got you here won't get you there.** **But what got you here is more than enough to start getting you there.**
+> 让你走到这里的，到不了那里；但让你走到这里的，已足以让你启程。
 >
-> 让你走到这里的，到不了那里；
-> 但让你走到这里的，已足以让你启程。
->
-> **第一性原理**：不记"怎么做"，追问"为什么必须这样"。每道题往下挖到物理/逻辑/数学层——命令和工具是推论，原理才是骨骼。
+> **第一性原理：真知在前提处，不在结论处。**
 
 ## 这个库是什么
 
