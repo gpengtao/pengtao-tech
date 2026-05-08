@@ -2,7 +2,7 @@
 title: pengtao-brain
 ---
 
-# pengtao-brain · 我的技术知识库
+# pengtao-brain · 我的技术知识库，这是首页
 
 > **What got you here won't get you there.**  
 > **But what got you here is more than enough to start getting you there.**
@@ -16,7 +16,7 @@ title: pengtao-brain
 | [[01-AI大模型/index\|01-AI大模型]] | Transformer、RAG、Agent、训练微调、推理部署、多模态、具身 |
 | [[02-Java后端核心/index\|02-Java后端核心]] | JVM/GC、Spring/Dubbo、并发编程 |
 | [[03-Python技术栈/index\|03-Python技术栈]] | 语言核心、异步并发、工程化、生态 |
-| [[04-数据库与中间件/index\|04-数据库与中间件]] | MySQL、Redis、Elasticsearch、消息队列 |
+| [[04-数据库与中间件/index\|04-数据库与中间件]] å| MySQL、Redis、Elasticsearch、消息队列 |
 | [[05-分布式与架构/index\|05-分布式与架构]] | 一致性/事务、高可用/容灾、系统设计题 |
 | [[06-线上排障/index\|06-线上排障]] | OOM/内存泄漏、慢查询/性能、全链路排查 |
 | [[07-基础与通识/index\|07-基础与通识]] | 底层原理（OS/网络/CPU）+ 通用常识 |
