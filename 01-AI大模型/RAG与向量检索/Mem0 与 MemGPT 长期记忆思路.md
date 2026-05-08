@@ -3,7 +3,6 @@ tags: [P0, AI方向, 具身方向, 生疏]
 来源: 专题 · 具身 Agent
 相关: "[[_专题-具身Agent/index]]"
 ---
-
 # Mem0 与 MemGPT 长期记忆思路
 
 ## 一句话速记

@@ -2,7 +2,6 @@
 tags: [P1, Java方向, 生疏]
 相关: "[[02-Java后端核心/index]]"
 ---
-
 # CompletableFuture 默认线程池的坑
 
 ## 一句话速记

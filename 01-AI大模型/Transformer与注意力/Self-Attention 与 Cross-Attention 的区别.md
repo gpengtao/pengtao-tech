@@ -3,7 +3,6 @@ tags: [P0, 真盲区, AI方向, 生疏]
 来源: 知识库 MOC 第 6 题
 相关: "[[Decoder 的 Mask 为什么要下三角]] [[Transformer 是什么]]"
 ---
-
 # Self-Attention 与 Cross-Attention 的区别
 
 ## 一句话速记

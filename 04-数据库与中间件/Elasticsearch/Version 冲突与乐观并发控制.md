@@ -2,7 +2,6 @@
 tags: [P1, ES, 生疏]
 相关: "[[04-数据库与中间件/index]]"
 ---
-
 # Version 冲突 / 乐观并发控制（if_seq_no + if_primary_term）
 
 ## 一句话速记

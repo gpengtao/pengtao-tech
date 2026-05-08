@@ -1,7 +1,6 @@
 ---
 tags: [P1, 架构方向, 生疏]
 ---
-
 # 全链路追踪（SkyWalking / Zipkin / CAT）
 
 ## 一句话速记

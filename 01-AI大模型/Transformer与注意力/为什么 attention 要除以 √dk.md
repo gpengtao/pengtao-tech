@@ -3,7 +3,6 @@ tags: [P0, 真盲区, AI方向, 已背熟]
 来源: 2026-04 自我模拟练习 Q2.1（假设题源）
 相关: "[[多头注意力为什么比单头好]] [[Self-Attention vs Cross-Attention]]"
 ---
-
 # 为什么 attention 要除以 √dk
 
 ## 一句话速记

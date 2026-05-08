@@ -3,7 +3,6 @@ tags: [P0, 真盲区, AI方向, 生疏]
 来源: 自己发起的基础补强（2026-04-24）
 相关: "[[Transformer 是什么]]"
 ---
-
 # RNN 是什么
 
 > **全称**：Recurrent Neural Network · 循环神经网络

@@ -2,7 +2,6 @@
 tags: [MOC, AI方向]
 priority: P0
 ---
-
 # 01 · AI 大模型 · 内容地图
 
 > **定位**：P0 学习重点：Transformer 原理 / 训练微调 / Agent 系统。

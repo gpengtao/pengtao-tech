@@ -3,7 +3,6 @@ tags: [P0, AI方向, 具身方向, 生疏]
 来源: 专题 · 具身 Agent
 相关: "[[01-AI大模型/Agent系统/Agent 的基本抽象是什么]] [[LangGraph 是什么 与 LangChain 的关系]] [[01-AI大模型/Agent系统/ReAct 的核心思想是什么]]"
 ---
-
 # Dify 与 LangChain-LangGraph 的对比
 
 > **价值定位**：Dify 偏「平台型」（流程 / 编排 / 多租户 / 评估），LangChain/LangGraph 偏「代码框架」（细粒度状态 / 可编程图）。**用对比来学是最高效的**——把两套抽象放进同一张表，能看清各自擅长的场景。这是 Agent 工程方向上**很有价值的横向对比题**。

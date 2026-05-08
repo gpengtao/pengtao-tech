@@ -2,7 +2,6 @@
 tags: [P0, Java方向, 生疏]
 相关: "[[02-Java后端核心/index]]"
 ---
-
 # AQS 的核心思想 / ReentrantLock vs synchronized
 
 ## 一句话速记

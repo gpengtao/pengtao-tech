@@ -2,7 +2,6 @@
 tags: [P0, 数据库, 生疏]
 相关: "[[04-数据库与中间件/index]]"
 ---
-
 # 幻读在普通 SELECT 和 `SELECT ... FOR UPDATE` 下的差异
 
 ## 一句话速记

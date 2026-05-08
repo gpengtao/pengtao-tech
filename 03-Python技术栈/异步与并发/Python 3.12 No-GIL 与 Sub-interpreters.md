@@ -2,7 +2,6 @@
 tags: [P1, Python方向, 生疏]
 相关: "[[03-Python技术栈/index]]"
 ---
-
 # Python 3.12 No-GIL（PEP 703）对 AI 应用的意义 / Sub-interpreters（PEP 684）
 
 ## 一句话速记

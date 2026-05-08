@@ -2,7 +2,6 @@
 tags: [P1, MQ, 生疏]
 相关: "[[04-数据库与中间件/index]]"
 ---
-
 # Kafka vs RocketMQ 取舍矩阵
 
 ## 一句话速记

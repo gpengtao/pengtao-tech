@@ -3,7 +3,6 @@ tags: [P1, AI方向, 具身方向, 生疏]
 来源: 专题 · 具身 Agent
 相关: "[[_专题-具身Agent/index]]"
 ---
-
 # OpenVLA 与 π0 与 RDT-1B 是什么
 
 ## 一句话速记

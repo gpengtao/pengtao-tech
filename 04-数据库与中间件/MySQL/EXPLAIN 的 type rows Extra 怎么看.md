@@ -2,7 +2,6 @@
 tags: [P0, 数据库, 生疏]
 相关: "[[04-数据库与中间件/index]]"
 ---
-
 # EXPLAIN 的 type / rows / Extra 怎么看
 
 ## 一句话速记
