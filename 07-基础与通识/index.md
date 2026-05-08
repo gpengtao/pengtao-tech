@@ -10,3 +10,9 @@ tags: [MOC, 通用]
 ## 条目
 
 - [[07-基础与通识/数量级单位速查（K M G T P E 发音）|数量级单位速查（K M G T P E 发音）]]
+- [[07-基础与通识/GitHub Actions + Pages + Quartz 是什么|GitHub Actions + Pages + Quartz 是什么]]
+
+## 算法
+
+- [[07-基础与通识/快速排序的思路|快速排序的思路]]
+- [[07-基础与通识/二叉树前序遍历|二叉树前序遍历]]
