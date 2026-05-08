@@ -26,6 +26,10 @@ _临时/*
 .vscode/
 .idea/
 
-# Python / Node（如果以后有脚本放这）
+# Python / Node
 __pycache__/
 node_modules/
+
+# Quartz 构建产物
+public/
+.quartz-cache/

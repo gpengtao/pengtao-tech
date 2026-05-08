@@ -1,6 +1,6 @@
 ---
 tags: [P0, Python方向, 生疏]
-相关: [[03-Python技术栈/_MOC]]
+相关: "[[03-Python技术栈/_MOC]]"
 ---
 
 # 多进程 / asyncio / 多线程的选择矩阵

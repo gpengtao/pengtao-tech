@@ -1,7 +1,7 @@
 ---
 tags: [P0, AI方向, 具身方向, 生疏]
 来源: 专题 · 具身 Agent
-相关: [[LangGraph 是什么 与 LangChain 的关系]] [[Multi-Agent 有哪些协作范式]]
+相关: "[[LangGraph 是什么 与 LangChain 的关系]] [[Multi-Agent 有哪些协作范式]]"
 ---
 
 # LangGraph Multi-Agent：Supervisor vs Swarm

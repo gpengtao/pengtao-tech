@@ -1,7 +1,7 @@
 ---
 tags: [P0, AI方向, 具身方向, 生疏]
 来源: 专题 · 具身 Agent
-相关: [[01-AI大模型/Agent系统/Agent 的基本抽象是什么]] [[LangGraph 是什么 与 LangChain 的关系]] [[01-AI大模型/Agent系统/ReAct 的核心思想是什么]]
+相关: "[[01-AI大模型/Agent系统/Agent 的基本抽象是什么]] [[LangGraph 是什么 与 LangChain 的关系]] [[01-AI大模型/Agent系统/ReAct 的核心思想是什么]]"
 ---
 
 # Dify 与 LangChain-LangGraph 的对比

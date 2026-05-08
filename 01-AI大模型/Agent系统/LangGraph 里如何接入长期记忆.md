@@ -1,7 +1,7 @@
 ---
 tags: [P0, AI方向, 具身方向, 生疏]
 来源: 专题 · 具身 Agent
-相关: [[LangGraph 是什么 与 LangChain 的关系]] [[Mem0 与 MemGPT 长期记忆思路]] [[Agent 的记忆如何分层]]
+相关: "[[LangGraph 是什么 与 LangChain 的关系]] [[Mem0 与 MemGPT 长期记忆思路]] [[Agent 的记忆如何分层]]"
 ---
 
 # LangGraph 里如何接入长期记忆（工程实现）

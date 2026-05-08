@@ -1,6 +1,6 @@
 ---
 tags: [P1, Java方向, 生疏]
-相关: [[02-Java后端核心/Spring与Dubbo/Dubbo Provider 线程池打满与超时]]
+相关: "[[02-Java后端核心/Spring与Dubbo/Dubbo Provider 线程池打满与超时]]"
 ---
 
 # HikariCP 连接池耗尽的现象与 leakDetectionThreshold

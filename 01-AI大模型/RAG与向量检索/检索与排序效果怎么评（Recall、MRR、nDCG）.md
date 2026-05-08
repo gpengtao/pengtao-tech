@@ -1,7 +1,7 @@
 ---
 tags: [P0, 真盲区, AI方向, 生疏]
 来源: 知识库 · RAG
-相关: [[RAG 的基本流程与局限]] [[为什么 RAG 还需要 Rerank]]
+相关: "[[RAG 的基本流程与局限]] [[为什么 RAG 还需要 Rerank]]"
 ---
 
 # 检索与排序效果怎么评（Recall、MRR、nDCG）

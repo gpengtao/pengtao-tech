@@ -1,6 +1,6 @@
 ---
 tags: [P1, 通用, 生疏]
-相关: [[06-线上排障/慢查询与性能/全链路追踪（SkyWalking Zipkin CAT）]]
+相关: "[[06-线上排障/慢查询与性能/全链路追踪（SkyWalking Zipkin CAT）]]"
 ---
 
 # 日志规范与 TraceID 串联

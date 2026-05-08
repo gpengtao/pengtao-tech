@@ -1,6 +1,6 @@
 ---
 tags: [P1, Java方向, 生疏]
-相关: [[02-Java后端核心/JVM与GC/Full GC 的触发条件]]
+相关: "[[02-Java后端核心/JVM与GC/Full GC 的触发条件]]"
 ---
 
 # GC 导致整体慢的关键指标（GC 日志看什么）

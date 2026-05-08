@@ -1,7 +1,7 @@
 ---
 tags: [P0, AI方向, 具身方向, 生疏]
 来源: 专题 · 具身 Agent
-相关: [[_专题-具身Agent/_MOC]]
+相关: "[[_专题-具身Agent/_MOC]]"
 ---
 
 # MCP 协议是什么 与 dify_plugin 的关系

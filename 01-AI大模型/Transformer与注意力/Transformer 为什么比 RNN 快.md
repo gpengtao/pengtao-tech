@@ -1,7 +1,7 @@
 ---
 tags: [P0, 真盲区, AI方向, 生疏]
 来源: 知识库 MOC 第 3 题
-相关: [[RNN 是什么]] [[Transformer 是什么]]
+相关: "[[RNN 是什么]] [[Transformer 是什么]]"
 ---
 
 # Transformer 为什么比 RNN 快

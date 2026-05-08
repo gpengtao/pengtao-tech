@@ -1,6 +1,6 @@
 ---
 tags: [P1, ES, 生疏]
-相关: [[04-数据库与中间件/_MOC]]
+相关: "[[04-数据库与中间件/_MOC]]"
 ---
 
 # ReIndex 如何做到不停服 / 深分页：search_after + PIT vs scroll

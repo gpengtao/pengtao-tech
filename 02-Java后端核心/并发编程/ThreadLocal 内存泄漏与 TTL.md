@@ -1,6 +1,6 @@
 ---
 tags: [P0, Java方向, 生疏]
-相关: [[02-Java后端核心/_MOC]]
+相关: "[[02-Java后端核心/_MOC]]"
 ---
 
 # ThreadLocal 内存泄漏与 InheritableThreadLocal / TransmittableThreadLocal

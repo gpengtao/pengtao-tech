@@ -1,6 +1,6 @@
 ---
 tags: [P1, Java方向, 生疏]
-相关: [[02-Java后端核心/JVM与GC/OOM 排查路径]]
+相关: "[[02-Java后端核心/JVM与GC/OOM 排查路径]]"
 ---
 
 # MAT 的 Dominator Tree / Leak Suspect 视图
