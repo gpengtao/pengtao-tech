@@ -1,6 +1,6 @@
 ---
 tags: [P1, Python方向, 生疏]
-相关: "[[03-Python技术栈/_MOC]]"
+相关: "[[03-Python技术栈/index]]"
 ---
 
 # Celery / gevent 在异步任务与 I/O 密集服务中的常见用法

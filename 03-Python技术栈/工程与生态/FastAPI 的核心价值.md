@@ -1,6 +1,6 @@
 ---
 tags: [P0, Python方向, 生疏]
-相关: "[[03-Python技术栈/_MOC]]"
+相关: "[[03-Python技术栈/index]]"
 ---
 
 # FastAPI 的核心价值（Pydantic + OpenAPI 自动生成）

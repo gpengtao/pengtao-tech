@@ -1,6 +1,6 @@
 ---
 tags: [P0, Java方向, 生疏]
-相关: "[[02-Java后端核心/_MOC]]"
+相关: "[[02-Java后端核心/index]]"
 ---
 
 # ConcurrentHashMap 1.7 vs 1.8

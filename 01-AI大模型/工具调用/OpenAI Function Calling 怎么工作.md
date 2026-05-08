@@ -1,7 +1,7 @@
 ---
 tags: [P0, AI方向, 具身方向, 生疏]
 来源: 专题 · 具身 Agent
-相关: "[[_专题-具身Agent/_MOC]]"
+相关: "[[_专题-具身Agent/index]]"
 ---
 
 # OpenAI Function Calling 怎么工作

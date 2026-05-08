@@ -1,6 +1,6 @@
 ---
 tags: [P1, Python方向, 生疏]
-相关: "[[03-Python技术栈/_MOC]]"
+相关: "[[03-Python技术栈/index]]"
 ---
 
 # Python vs Java：ORM / 泛型 / 错误处理 / 包管理的差异感

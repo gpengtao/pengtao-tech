@@ -26,6 +26,6 @@ priority: P0
 ```dataview
 TABLE file.mtime AS "最近更新", tags
 FROM "01-AI大模型/RAG与向量检索"
-WHERE file.name != "_MOC.md" AND !contains(file.name, ".gitkeep")
+WHERE file.name != "index.md" AND !contains(file.name, ".gitkeep")
 SORT file.mtime DESC
 ```
