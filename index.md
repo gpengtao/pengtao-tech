@@ -1,8 +1,8 @@
 ---
-title: pengtao-brain
+title: pengtao-tech
 tags: [入口]
 ---
-# pengtao-brain · 我的技术知识库
+# pengtao-tech · 我的技术知识库
 
 个人技术知识库，使用 [Obsidian](https://obsidian.md) 管理。**问题驱动，一题一文件**——每个 `.md` 文件回答一个具体技术问题。
 

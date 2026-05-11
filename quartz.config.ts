@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "pengtao-brain",
+    pageTitle: "pengtao-tech",
     pageTitleSuffix: " | 我的技术知识库",
     enableSPA: true,
     enablePopovers: true,
@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "zh-CN",
-    baseUrl: "gpengtao.github.io/pengtao-brain",
+    baseUrl: "gpengtao.github.io/pengtao-tech",
     ignorePatterns: ["private", "_模板", "_临时", ".obsidian"],
     defaultDateType: "modified",
     theme: {
