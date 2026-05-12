@@ -11,6 +11,11 @@ priority: P1
 
 ## 子模块导航
 
+### Java 基础
+_语言本身的核心机制 · JDK 发展脉络_
+
+- [[02-Java后端核心/Java基础/Java 基础概览]]
+
 ### JVM 与 GC
 _Java 高频考点 · 配 1～2 个「大对象 / 长计算 / 压测」相关的案例更扎实_
 
@@ -33,6 +38,8 @@ _"场景 → 方案 → 坑点"三段要练熟_
 - 🆕 [[02-Java后端核心/并发编程/线程池隔离策略与拒绝策略]] #P0 #生疏
 - 🆕 [[02-Java后端核心/并发编程/分布式锁 Redis vs ZK vs 数据库]] #P0 #生疏
 - 🆕 [[02-Java后端核心/并发编程/Redlock 算法的争议]] #P1 #生疏
+- [[02-Java后端核心/并发编程/ScheduledExecutorService 的一个小坑]]
+- [[02-Java后端核心/并发编程/进程与线程的基本概念]]
 
 ### Spring 与 Dubbo
 _框架扩展点深度 · 你在大模型应用平台里用过 SPI_
@@ -43,6 +50,7 @@ _框架扩展点深度 · 你在大模型应用平台里用过 SPI_
 - 🆕 [[02-Java后端核心/Spring与Dubbo/Dubbo 完整调用链]] #P0 #生疏
 - 🆕 [[02-Java后端核心/Spring与Dubbo/Dubbo Provider 线程池打满与超时]] #P0 #生疏
 - 🆕 [[02-Java后端核心/Spring与Dubbo/SPI 在项目里的实际用法]] #P1 #生疏
+- [[02-Java后端核心/Spring与Dubbo/Spring 和 Spring MVC]]
 
 ---
 
