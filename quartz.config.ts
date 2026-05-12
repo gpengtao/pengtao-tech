@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "zh-CN",
     baseUrl: "gpengtao.github.io/pengtao-tech",
-    ignorePatterns: ["private", "_模板", "_临时", ".obsidian"],
+    ignorePatterns: ["private", "_模板", "_临时", ".obsidian", ".quartz"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
@@ -88,8 +88,8 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // 本地预览时注释掉以加速构建（CI 会生成）
+      ...(process.env.QUARTZ_LOCAL ? [] : [Plugin.CustomOgImages()]),
     ],
   },
 }

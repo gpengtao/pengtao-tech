@@ -29,3 +29,6 @@ _临时/*
 # Python / Node
 __pycache__/
 node_modules/
+
+# 本地 Quartz 引擎（preview.sh 自动创建，不进版本库）
+.quartz/

@@ -1,5 +1,16 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { Options } from "./quartz/components/Explorer"
+
+const explorerConfig: Partial<Options> = {
+  // sort 先于 map，保证按数字前缀排序后再去掉前缀显示
+  order: ["filter", "sort", "map"],
+  mapFn: (node) => {
+    // 去掉目录名的数字前缀（如 "10-Transformer与注意力" → "Transformer与注意力"）
+    node.displayName = node.displayName.replace(/^\d+-/, "")
+    return node
+  },
+}
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -38,7 +49,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer(explorerConfig),
   ],
   right: [
     Component.Graph(),
@@ -62,7 +73,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer(explorerConfig),
   ],
   right: [
     Component.Graph(),
