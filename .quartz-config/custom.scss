@@ -1,0 +1,253 @@
+@use "./base.scss";
+
+// =============================================================
+//  可拖拽左侧导航：grid 宽度由 CSS 变量控制，JS 动态更新
+// =============================================================
+
+@media (min-width: 1200px) {
+  .page > #quartz-body {
+    // --left-sidebar-width 由 ResizeSidebar.tsx 的 JS 写入 :root，默认 320px
+    grid-template-columns: var(--left-sidebar-width, 320px) auto 320px;
+  }
+}
+
+// 左侧栏需要 position: relative，让拖拽 handle 能绝对定位到右边缘
+#left-sidebar {
+  position: relative;
+}
+
+// =============================================================
+//  间距微调
+// =============================================================
+
+// 侧边栏左右内边距
+.sidebar.left  { padding-left: 0.8rem !important; padding-right: 0.8rem !important; }
+.sidebar.right { padding-left: 0.8rem !important; padding-right: 0.8rem !important; }
+
+@media (min-width: 1200px) {
+  .page > #quartz-body {
+    column-gap: 8px;
+  }
+}
+
+// 页面顶部空白（和侧边栏 padding-top 保持一致，三栏对齐）
+.page-header { margin-top: 1.8rem !important; }
+
+// =============================================================
+//  侧边栏整体
+// =============================================================
+
+.page > #quartz-body .sidebar {
+  padding-top: 1.8rem !important;
+  font-size: 0.85rem;
+}
+
+// =============================================================
+//  Explorer 导航：对齐 onefly.top 风格
+//  - 文件夹/文件名：灰色（--gray），非绿色
+//  - 激活项：品牌绿（--secondary）+ 淡绿背景
+//  - hover：文字变主色（--darkgray）
+// =============================================================
+
+// Explorer 标题按钮文字：全大写小字灰色标签风格
+button.desktop-explorer h2,
+button.mobile-explorer h2 {
+  color: var(--gray);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// 文件夹标题链接：灰色，稍加粗但不过重
+.folder-container div > a {
+  color: var(--gray) !important;
+  font-weight: 500;
+  font-size: 0.82rem;
+}
+
+// 文件夹标题 hover：变主色
+.folder-container div > a:hover {
+  color: var(--darkgray) !important;
+}
+
+// 文件链接：常规字重，明确设为灰色
+.explorer-content ul li > a {
+  color: var(--gray) !important;
+  opacity: 1 !important;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+// 激活的文件链接：品牌绿 + 淡绿背景
+.explorer-content ul li > a.active {
+  color: var(--secondary) !important;
+  background-color: var(--highlight);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+// 文件链接 hover：变主色
+.explorer-content ul li > a:hover {
+  color: var(--darkgray) !important;
+}
+
+// Explorer 目录项 hover 背景
+.explorer-ul li > .explorer-item {
+  border-radius: 4px;
+  padding: 2px 6px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: var(--highlight);
+  }
+}
+
+// 目录展开折叠图标
+.explorer-ul .fold-icon {
+  opacity: 0.5;
+}
+
+// 侧边栏树形左边线颜色（淡一些）
+.explorer-content .folder-outer > ul {
+  border-left-color: var(--lightgray) !important;
+}
+
+// TOC 当前项高亮
+.toc li.in-view > a {
+  color: var(--secondary);
+}
+
+// =============================================================
+//  顶部 Header
+// =============================================================
+.page-header {
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+// =============================================================
+//  文章内容区
+// =============================================================
+
+article h1 { margin-top: 1.8rem; margin-bottom: 0.5rem; }
+article h2 { margin-top: 1.5rem; margin-bottom: 0.4rem; }
+article h3 { margin-top: 1.2rem; margin-bottom: 0.3rem; }
+
+article p { line-height: 1.75; }
+
+// 行内代码
+article :not(pre) > code {
+  background-color: var(--lightgray);
+  color: var(--secondary);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-size: 0.875em;
+}
+
+// 代码块圆角
+pre {
+  border-radius: 8px !important;
+  padding: 1.1rem 1.2rem !important;
+}
+
+// blockquote 左边彩条
+blockquote {
+  border-left: 3px solid var(--secondary);
+  background: var(--highlight);
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  color: var(--darkgray);
+}
+
+// 链接下划线动画
+article a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-bottom-color: var(--secondary);
+  }
+}
+
+// 图片圆角
+article img {
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+// =============================================================
+//  页脚 & Backlinks
+// =============================================================
+.page-footer {
+  border-top: 1px solid var(--lightgray);
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--gray);
+}
+
+// =============================================================
+//  搜索框
+// =============================================================
+#search-bar {
+  border-radius: 20px !important;
+  padding: 0.4rem 0.9rem !important;
+  font-size: 0.875rem;
+}
+
+// =============================================================
+//  标签 badge
+// =============================================================
+.tag-link {
+  background-color: var(--highlight);
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  padding: 0.15em 0.6em;
+  font-size: 0.78em;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--secondary);
+    color: var(--light);
+    border-color: var(--secondary);
+  }
+}
+
+// =============================================================
+//  暗色模式额外微调（zero2Agent Dark 风格）
+// =============================================================
+[saved-theme="dark"] {
+  pre {
+    background-color: #111118 !important;
+  }
+
+  .sidebar {
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  #quartz-body > #right-sidebar {
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+    border-right: none;
+  }
+}
+
+// =============================================================
+//  字重和字体微调
+// =============================================================
+
+body {
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+a {
+  transition: color 0.15s ease;
+}

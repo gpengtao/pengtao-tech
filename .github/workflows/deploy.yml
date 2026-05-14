@@ -38,8 +38,9 @@ jobs:
 
       - name: Copy custom config
         run: |
-          cp vault/quartz.config.ts quartz/quartz.config.ts
-          cp vault/quartz.layout.ts quartz/quartz.layout.ts
+          cp vault/.quartz-config/quartz.config.ts quartz/quartz.config.ts
+          cp vault/.quartz-config/quartz.layout.ts quartz/quartz.layout.ts
+          cp vault/.quartz-config/custom.scss quartz/quartz/styles/custom.scss
 
       - name: Build Quartz
         run: npx quartz build --directory ../vault

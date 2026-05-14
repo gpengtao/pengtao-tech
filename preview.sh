@@ -10,17 +10,26 @@ PORT=8080
 if [ ! -d "$QUARTZ_DIR" ]; then
   echo ">>> 首次运行，克隆 Quartz..."
   git clone --depth 1 "$QUARTZ_REPO" "$QUARTZ_DIR"
+  echo ">>> 克隆完成"
   echo ">>> 安装依赖（pnpm）..."
   pnpm install --dir "$QUARTZ_DIR"
   pnpm approve-builds --dir "$QUARTZ_DIR" --all
+  echo ">>> 依赖安装完成"
+else
+  echo ">>> Quartz 已存在，跳过克隆"
 fi
 
 # 同步配置文件
-cp "$SCRIPT_DIR/quartz.config.ts" "$QUARTZ_DIR/quartz.config.ts"
-cp "$SCRIPT_DIR/quartz.layout.ts" "$QUARTZ_DIR/quartz.layout.ts"
+echo ">>> 同步配置文件..."
+cp "$SCRIPT_DIR/.quartz-config/quartz.config.ts" "$QUARTZ_DIR/quartz.config.ts"
+echo "    quartz.config.ts -> $QUARTZ_DIR/quartz.config.ts"
+cp "$SCRIPT_DIR/.quartz-config/quartz.layout.ts" "$QUARTZ_DIR/quartz.layout.ts"
+echo "    quartz.layout.ts -> $QUARTZ_DIR/quartz.layout.ts"
+cp "$SCRIPT_DIR/.quartz-config/custom.scss" "$QUARTZ_DIR/quartz/styles/custom.scss"
+echo "    custom.scss      -> $QUARTZ_DIR/quartz/styles/custom.scss"
 
 # 构建静态文件（不启动 watcher，彻底避免 EMFILE）
-echo ">>> 构建中..."
+echo ">>> 静态文件构建中..."
 cd "$QUARTZ_DIR"
 export QUARTZ_LOCAL=1
 npx quartz build --directory "$SCRIPT_DIR"
