@@ -55,6 +55,20 @@ LLM 本身是个无状态的概率函数：单轮补全即可跑，但一旦要�
 
 > 以下是真实扒 Claude Code 二进制（`/opt/homebrew/Caskroom/claude-code/<ver>/claude`，212MB Mach-O，bun 打包的单文件）后还原的逻辑。它把抽象的「harness 怎么驾驭模型」讲得比任何定义都透。
 
+### 现象
+
+用 Claude Code 提交代码，每条 commit message 末尾都会自动多出一行 `Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>`。这行字由模型手敲进 `git commit -m "..."`，git 原样写入。
+
+### 原因
+
+这行字看似模型「自觉」加的，实则是 agent 软件在背后喂的指令：软件用 `VuH()` 算出署名字符串 → 塞进 Bash 工具描述 → 模型读到「End git commit messages with: …」后照抄进 message。模型只是执笔，软件才是定稿。
+
+署名里的 `"Claude Fable 5"` 也不是写死：`VuH()` 拿当前模型标识查「友好名表」，查不到就 fallback 成这个固定串。所以即便会话模型是 GLM-5.2，署名仍是 Fable 5——名字由软件决定，与模型自报家门无关。
+
+### 结论
+
+一个看似「模型自觉」的行为，背后全是软件在喂指令：软约束靠工具描述每轮下发，硬约束靠代码开关兜底。模型没有意志，只有服从。
+
 ### 先把两个主体分开（这是理解一切的前提）
 
 | 主体 | 是什么 | 能力边界 |
