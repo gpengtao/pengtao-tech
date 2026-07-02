@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0  # 获取完整 git 历史，用于文件修改时间
 
       - name: Clone Quartz
-        run: git clone --depth 1 https://github.com/jackyzha0/quartz.git quartz
+        run: git clone --depth 1 --branch v4 https://github.com/jackyzha0/quartz.git quartz
 
       - uses: actions/setup-node@v4
         with:
