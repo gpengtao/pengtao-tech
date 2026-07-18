@@ -1,253 +1,692 @@
 @use "./base.scss";
 
 // =============================================================
-//  可拖拽左侧导航：grid 宽度由 CSS 变量控制，JS 动态更新
+//  Reading-first theme
+//  Warm paper palette, quiet navigation, and a deliberately narrow
+//  text column keep long technical notes comfortable to scan.
 // =============================================================
 
-@media (min-width: 1200px) {
-  .page > #quartz-body {
-    // --left-sidebar-width 由 ResizeSidebar.tsx 的 JS 写入 :root，默认 320px
-    grid-template-columns: var(--left-sidebar-width, 320px) auto 320px;
-  }
+:root {
+  --reading-width: 800px;
+  --sidebar-left: 280px;
+  --sidebar-right: 240px;
+  --soft-shadow: 0 12px 32px rgba(24, 37, 32, 0.06);
 }
 
-// 左侧栏需要 position: relative，让拖拽 handle 能绝对定位到右边缘
-#left-sidebar {
-  position: relative;
+* {
+  scrollbar-color: color-mix(in srgb, var(--gray) 35%, transparent) transparent;
 }
-
-// =============================================================
-//  间距微调
-// =============================================================
-
-// 侧边栏左右内边距
-.sidebar.left  { padding-left: 0.8rem !important; padding-right: 0.8rem !important; }
-.sidebar.right { padding-left: 0.8rem !important; padding-right: 0.8rem !important; }
-
-@media (min-width: 1200px) {
-  .page > #quartz-body {
-    column-gap: 8px;
-  }
-}
-
-// 页面顶部空白（和侧边栏 padding-top 保持一致，三栏对齐）
-.page-header { margin-top: 1.8rem !important; }
-
-// =============================================================
-//  侧边栏整体
-// =============================================================
-
-.page > #quartz-body .sidebar {
-  padding-top: 1.8rem !important;
-  font-size: 0.85rem;
-}
-
-// =============================================================
-//  Explorer 导航：对齐 onefly.top 风格
-//  - 文件夹/文件名：灰色（--gray），非绿色
-//  - 激活项：品牌绿（--secondary）+ 淡绿背景
-//  - hover：文字变主色（--darkgray）
-// =============================================================
-
-// Explorer 标题按钮文字：全大写小字灰色标签风格
-button.desktop-explorer h2,
-button.mobile-explorer h2 {
-  color: var(--gray);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-// 文件夹标题链接：灰色，稍加粗但不过重
-.folder-container div > a {
-  color: var(--gray) !important;
-  font-weight: 500;
-  font-size: 0.82rem;
-}
-
-// 文件夹标题 hover：变主色
-.folder-container div > a:hover {
-  color: var(--darkgray) !important;
-}
-
-// 文件链接：常规字重，明确设为灰色
-.explorer-content ul li > a {
-  color: var(--gray) !important;
-  opacity: 1 !important;
-  font-weight: 400;
-  font-size: 0.8rem;
-}
-
-// 激活的文件链接：品牌绿 + 淡绿背景
-.explorer-content ul li > a.active {
-  color: var(--secondary) !important;
-  background-color: var(--highlight);
-  border-radius: 4px;
-  padding: 1px 5px;
-}
-
-// 文件链接 hover：变主色
-.explorer-content ul li > a:hover {
-  color: var(--darkgray) !important;
-}
-
-// Explorer 目录项 hover 背景
-.explorer-ul li > .explorer-item {
-  border-radius: 4px;
-  padding: 2px 6px;
-  transition: background-color 0.15s ease, color 0.15s ease;
-
-  &:hover {
-    background-color: var(--highlight);
-  }
-}
-
-// 目录展开折叠图标
-.explorer-ul .fold-icon {
-  opacity: 0.5;
-}
-
-// 侧边栏树形左边线颜色（淡一些）
-.explorer-content .folder-outer > ul {
-  border-left-color: var(--lightgray) !important;
-}
-
-// TOC 当前项高亮
-.toc li.in-view > a {
-  color: var(--secondary);
-}
-
-// =============================================================
-//  顶部 Header
-// =============================================================
-.page-header {
-  border-bottom: 1px solid var(--lightgray);
-  padding-bottom: 0.6rem;
-  margin-bottom: 1.2rem;
-}
-
-// =============================================================
-//  文章内容区
-// =============================================================
-
-article h1 { margin-top: 1.8rem; margin-bottom: 0.5rem; }
-article h2 { margin-top: 1.5rem; margin-bottom: 0.4rem; }
-article h3 { margin-top: 1.2rem; margin-bottom: 0.3rem; }
-
-article p { line-height: 1.75; }
-
-// 行内代码
-article :not(pre) > code {
-  background-color: var(--lightgray);
-  color: var(--secondary);
-  border-radius: 4px;
-  padding: 0.1em 0.4em;
-  font-size: 0.875em;
-}
-
-// 代码块圆角
-pre {
-  border-radius: 8px !important;
-  padding: 1.1rem 1.2rem !important;
-}
-
-// blockquote 左边彩条
-blockquote {
-  border-left: 3px solid var(--secondary);
-  background: var(--highlight);
-  border-radius: 0 6px 6px 0;
-  padding: 0.6rem 1rem;
-  margin: 1rem 0;
-  color: var(--darkgray);
-}
-
-// 链接下划线动画
-article a {
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
-
-  &:hover {
-    border-bottom-color: var(--secondary);
-  }
-}
-
-// 图片圆角
-article img {
-  border-radius: 6px;
-  max-width: 100%;
-}
-
-// =============================================================
-//  页脚 & Backlinks
-// =============================================================
-.page-footer {
-  border-top: 1px solid var(--lightgray);
-  margin-top: 2.5rem;
-  padding-top: 1rem;
-  font-size: 0.82rem;
-  color: var(--gray);
-}
-
-// =============================================================
-//  搜索框
-// =============================================================
-#search-bar {
-  border-radius: 20px !important;
-  padding: 0.4rem 0.9rem !important;
-  font-size: 0.875rem;
-}
-
-// =============================================================
-//  标签 badge
-// =============================================================
-.tag-link {
-  background-color: var(--highlight);
-  border: 1px solid var(--lightgray);
-  border-radius: 12px;
-  padding: 0.15em 0.6em;
-  font-size: 0.78em;
-  transition: background-color 0.2s ease;
-
-  &:hover {
-    background-color: var(--secondary);
-    color: var(--light);
-    border-color: var(--secondary);
-  }
-}
-
-// =============================================================
-//  暗色模式额外微调（zero2Agent Dark 风格）
-// =============================================================
-[saved-theme="dark"] {
-  pre {
-    background-color: #111118 !important;
-  }
-
-  .sidebar {
-    border-right: 1px solid rgba(255, 255, 255, 0.07);
-  }
-
-  #quartz-body > #right-sidebar {
-    border-left: 1px solid rgba(255, 255, 255, 0.07);
-    border-right: none;
-  }
-}
-
-// =============================================================
-//  字重和字体微调
-// =============================================================
 
 body {
+  font-size: 16px;
   font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.006em;
+  background:
+    radial-gradient(circle at 50% -12rem, color-mix(in srgb, var(--highlight) 55%, transparent), transparent 34rem),
+    var(--light);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+::selection {
+  background: var(--textHighlight);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+// =============================================================
+//  Layout: stable navigation + readable center column
+// =============================================================
+
+.page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1580px;
+}
+
+.page > #quartz-body .sidebar {
+  gap: 1rem;
+  padding-top: 2.25rem !important;
+  font-size: 0.84rem;
+}
+
+.sidebar.left {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.sidebar.right {
+  padding-left: 0.75rem !important;
+  padding-right: 1rem !important;
+}
+
+.page-header {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--reading-width);
+  margin: 2.25rem auto 0 !important;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+.page-footer {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--reading-width);
+  margin: 3.5rem auto 0 !important;
+  padding: 1.25rem 0 2.5rem;
+  border-top: 1px solid var(--lightgray);
+  color: var(--gray);
+  font-size: 0.78rem;
+}
+
+.center > article {
+  width: 100%;
+  max-width: var(--reading-width);
+  margin: 0 auto;
+}
+
+@media (min-width: 1480px) {
+  .page > #quartz-body {
+    grid-template-columns: var(--sidebar-left) minmax(0, var(--reading-width)) var(--sidebar-right);
+    column-gap: 32px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1479px) {
+  .page {
+    padding: 0 20px;
+  }
+
+  .page > #quartz-body {
+    grid-template-columns: 250px minmax(0, 1fr) 220px;
+    column-gap: 20px;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1199px) {
+  .page > #quartz-body {
+    grid-template-columns: 248px minmax(0, 1fr);
+    column-gap: 28px;
+    padding: 0 1.5rem;
+  }
+
+  .sidebar.left {
+    padding-left: 0 !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+// =============================================================
+//  Site identity and top controls
+// =============================================================
+
+.page-title {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.page-title a {
+  color: var(--dark);
+  font-family: var(--headerFont);
+  font-size: 1.08rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-a {
-  transition: color 0.15s ease;
+.page-title a:hover {
+  color: var(--secondary);
+}
+
+.search > .search-button {
+  height: 2.25rem;
+  padding-right: 0.75rem;
+  border-color: var(--lightgray);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--lightgray) 28%, transparent);
+  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.search > .search-button:hover {
+  border-color: color-mix(in srgb, var(--secondary) 45%, var(--lightgray));
+  background: var(--highlight);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--dark) 5%, transparent);
+}
+
+.search > .search-container > .search-space > input,
+.search > .search-container > .search-space > .search-layout {
+  border-radius: 14px;
+}
+
+// =============================================================
+//  Explorer: calm tree navigation with a clear active page
+// =============================================================
+
+button.desktop-explorer h2,
+button.mobile-explorer h2 {
+  color: var(--gray);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.explorer-content {
+  margin-top: 0.65rem;
+  padding-right: 0.35rem;
+}
+
+.folder-container {
+  min-height: 1.85rem;
+  border-radius: 7px;
+}
+
+.folder-container div > a,
+.folder-container div > button span {
+  color: var(--darkgray) !important;
+  font-family: var(--bodyFont);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.folder-container:hover div > a,
+.folder-container:hover div > button span {
+  color: var(--secondary) !important;
+}
+
+.explorer-content ul li > a {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1px 0;
+  padding: 0.3rem 0.48rem;
+  border-radius: 7px;
+  color: var(--gray) !important;
+  font-size: 0.79rem;
+  font-weight: 400;
+  line-height: 1.45;
+  opacity: 1 !important;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+
+.explorer-content ul li > a:hover {
+  color: var(--dark) !important;
+  background: color-mix(in srgb, var(--lightgray) 48%, transparent);
+}
+
+.explorer-content ul li > a.active {
+  color: var(--secondary) !important;
+  background: var(--highlight);
+  font-weight: 600;
+}
+
+.explorer-content .folder-outer > ul {
+  margin-left: 0.42rem;
+  padding-left: 0.65rem;
+  border-left-color: color-mix(in srgb, var(--lightgray) 75%, transparent) !important;
+}
+
+.explorer-ul .fold-icon,
+.folder-icon {
+  opacity: 0.52;
+}
+
+// =============================================================
+//  Article header and typographic hierarchy
+// =============================================================
+
+.breadcrumbs {
+  margin-bottom: 0.8rem;
+  color: var(--gray);
+  font-size: 0.76rem;
+}
+
+.article-title {
+  max-width: 22ch;
+  margin: 0;
+  color: var(--dark);
+  font-size: clamp(2rem, 3vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.content-meta {
+  margin-top: 0.75rem;
+  color: var(--gray);
+  font-size: 0.76rem;
+  letter-spacing: 0.015em;
+}
+
+ul.tags {
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.tag-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5rem;
+  padding: 0.06rem 0.55rem !important;
+  border: 1px solid color-mix(in srgb, var(--secondary) 20%, var(--lightgray));
+  border-radius: 999px !important;
+  background: var(--highlight);
+  color: var(--secondary);
+  font-size: 0.72rem;
+  font-weight: 500;
+  transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease;
+}
+
+.tag-link:hover {
+  border-color: var(--secondary);
+  background: var(--secondary);
+  color: var(--light);
+}
+
+article {
+  padding-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.82;
+}
+
+// Notes already contain their own H1; Quartz's ArticleTitle is the canonical
+// web heading. Hiding the first in-body H1 prevents a duplicated title online
+// without changing the Obsidian source.
+article > h1:first-child {
+  display: none;
+}
+
+// The home note keeps a short frontmatter title for Obsidian. Complete it in
+// the published header so the landing page still reads like a proper cover.
+body[data-slug="index"] .article-title::after {
+  content: " · 我的技术知识库";
+}
+
+article p {
+  margin: 0.9rem 0;
+  line-height: 1.82;
+}
+
+article li {
+  line-height: 1.78;
+}
+
+article li + li {
+  margin-top: 0.28rem;
+}
+
+article ul,
+article ol {
+  padding-left: 1.45rem;
+}
+
+article li::marker {
+  color: color-mix(in srgb, var(--secondary) 72%, var(--gray));
+  font-weight: 600;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  color: var(--dark);
+  font-weight: 650;
+  line-height: 1.42;
+  letter-spacing: -0.022em;
+  scroll-margin-top: 1.25rem;
+  text-wrap: pretty;
+}
+
+article h2 {
+  margin: 2.8rem 0 1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--lightgray);
+  font-size: 1.48rem;
+}
+
+article h3 {
+  margin: 2.15rem 0 0.75rem;
+  font-size: 1.18rem;
+}
+
+article h4,
+article h5,
+article h6 {
+  margin: 1.75rem 0 0.65rem;
+  font-size: 1rem;
+}
+
+article strong {
+  color: var(--dark);
+  font-weight: 650;
+}
+
+article a {
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(in srgb, var(--secondary) 30%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color 140ms ease, text-decoration-color 140ms ease;
+}
+
+article a:hover {
+  color: var(--tertiary);
+  text-decoration-color: currentColor;
+}
+
+article a.internal {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+hr {
+  margin: 2.6rem auto;
+  background: linear-gradient(90deg, transparent, var(--lightgray) 18%, var(--lightgray) 82%, transparent);
+}
+
+// =============================================================
+//  Reading components: quotes, code, tables, images, callouts
+// =============================================================
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.85rem 1.1rem;
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 10px 10px 0;
+  background: var(--highlight);
+  color: var(--darkgray);
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+article :not(pre) > code {
+  padding: 0.12em 0.38em;
+  border: 1px solid color-mix(in srgb, var(--secondary) 15%, var(--lightgray));
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--lightgray) 62%, transparent);
+  color: color-mix(in srgb, var(--secondary) 84%, var(--dark));
+  font-size: 0.86em;
+  font-weight: 500;
+}
+
+pre {
+  margin: 1.35rem 0;
+  padding: 0.55rem 0.7rem !important;
+  border: 1px solid var(--lightgray);
+  border-radius: 11px !important;
+  background: color-mix(in srgb, var(--lightgray) 36%, var(--light)) !important;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 55%, transparent);
+}
+
+pre > code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+figure[data-rehype-pretty-code-figure] > [data-rehype-pretty-code-title] {
+  margin-bottom: -0.35rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 7px 7px 0 0;
+  background: color-mix(in srgb, var(--lightgray) 58%, var(--light));
+  color: var(--gray);
+  font-size: 0.74rem;
+}
+
+// Dataview runs only inside Obsidian. On the published site, replace the raw
+// query with a quiet explanatory note instead of showing implementation code.
+figure[data-rehype-pretty-code-figure]:has(code[data-language="dataview"]) {
+  margin: 1.25rem 0;
+  padding: 0.8rem 1rem;
+  border: 1px dashed color-mix(in srgb, var(--secondary) 32%, var(--lightgray));
+  border-radius: 10px;
+  background: var(--highlight);
+  color: var(--gray);
+  font-size: 0.82rem;
+}
+
+figure[data-rehype-pretty-code-figure]:has(code[data-language="dataview"])::before {
+  content: "此处为 Obsidian 动态列表，发布版暂不执行查询。";
+}
+
+figure[data-rehype-pretty-code-figure]:has(code[data-language="dataview"]) > * {
+  display: none;
+}
+
+.table-container {
+  margin: 1.45rem 0;
+  border: 1px solid var(--lightgray);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--light) 92%, var(--highlight));
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--dark) 4%, transparent);
+}
+
+.table-container > table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th {
+  padding: 0.68rem 0.85rem;
+  border-bottom: 1px solid var(--lightgray);
+  background: color-mix(in srgb, var(--lightgray) 52%, transparent);
+  color: var(--dark);
+  font-size: 0.82rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+td {
+  padding: 0.62rem 0.85rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--lightgray) 68%, transparent);
+  line-height: 1.58;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: var(--highlight);
+}
+
+article img {
+  display: block;
+  margin: 1.7rem auto;
+  border: 1px solid var(--lightgray);
+  border-radius: 11px;
+  box-shadow: var(--soft-shadow);
+}
+
+.callout {
+  margin: 1.4rem 0;
+  border-radius: 10px;
+}
+
+// =============================================================
+//  Right rail: table of contents and backlinks, not dashboard chrome
+// =============================================================
+
+button.toc-header h3,
+.backlinks > h3 {
+  color: var(--gray);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+ul.toc-content.overflow {
+  margin-top: 0.65rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--lightgray);
+}
+
+ul.toc-content.overflow > li > a {
+  display: block;
+  padding: 0.18rem 0;
+  color: var(--gray);
+  font-size: 0.78rem;
+  line-height: 1.42;
+  opacity: 0.72;
+}
+
+ul.toc-content.overflow > li > a.in-view,
+ul.toc-content.overflow > li > a:hover {
+  color: var(--secondary);
+  opacity: 1;
+}
+
+.backlinks ul.overflow {
+  padding-left: 1rem;
+}
+
+.backlinks li,
+.backlinks a {
+  color: var(--gray);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+// =============================================================
+//  Lists and generated folder/tag pages
+// =============================================================
+
+.section-li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--lightgray) 76%, transparent);
+}
+
+.section-li:last-child {
+  border-bottom: 0;
+}
+
+.section-li > .section p,
+.section-li > .section h3 {
+  margin-top: 0;
+}
+
+// =============================================================
+//  Dark mode and responsive polish
+// =============================================================
+
+[saved-theme="dark"] {
+  --soft-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
+
+  body {
+    background:
+      radial-gradient(circle at 50% -12rem, rgba(94, 234, 212, 0.055), transparent 34rem),
+      var(--light);
+  }
+
+  pre {
+    background: #171d1a !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  }
+
+  .search > .search-button {
+    background: rgba(255, 255, 255, 0.025);
+  }
+
+  article img {
+    border-color: rgba(255, 255, 255, 0.09);
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --reading-width: 100%;
+  }
+
+  body {
+    font-size: 15.5px;
+  }
+
+  .page > #quartz-body {
+    padding: 0 1.1rem;
+  }
+
+  .page > #quartz-body .sidebar.left {
+    padding: 0.9rem 0 !important;
+    background: color-mix(in srgb, var(--light) 94%, transparent);
+    backdrop-filter: blur(14px);
+  }
+
+  .page-header {
+    margin-top: 0 !important;
+    padding: 1.25rem 0 1rem;
+  }
+
+  .article-title {
+    max-width: none;
+    font-size: clamp(1.75rem, 8vw, 2.2rem);
+    line-height: 1.32;
+  }
+
+  article {
+    padding-top: 1.1rem;
+    line-height: 1.76;
+  }
+
+  article p,
+  article li {
+    line-height: 1.76;
+  }
+
+  article h2 {
+    margin-top: 2.35rem;
+    font-size: 1.35rem;
+  }
+
+  article h3 {
+    margin-top: 1.9rem;
+    font-size: 1.12rem;
+  }
+
+  pre {
+    margin-right: -0.35rem;
+    margin-left: -0.35rem;
+    border-radius: 9px !important;
+  }
+
+  .table-container {
+    margin-right: -0.35rem;
+    margin-left: -0.35rem;
+    border-radius: 8px;
+  }
+
+  .page-footer {
+    margin-top: 2.8rem !important;
+    padding-bottom: 1.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

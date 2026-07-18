@@ -19,8 +19,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      "GitHub 仓库": "https://github.com/gpengtao/pengtao-tech",
     },
   }),
 }
@@ -52,7 +51,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(explorerConfig),
   ],
   right: [
-    Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -76,7 +74,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Explorer(explorerConfig),
   ],
   right: [
-    Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.Graph(),
   ],
 }

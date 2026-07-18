@@ -9,7 +9,7 @@ PORT=8080
 # 首次运行：克隆 Quartz 并安装依赖
 if [ ! -d "$QUARTZ_DIR" ]; then
   echo ">>> 首次运行，克隆 Quartz..."
-  git clone --depth 1 "$QUARTZ_REPO" "$QUARTZ_DIR"
+  git clone --depth 1 --branch v4 "$QUARTZ_REPO" "$QUARTZ_DIR"
   echo ">>> 克隆完成"
   echo ">>> 安装依赖（pnpm）..."
   pnpm install --dir "$QUARTZ_DIR"
